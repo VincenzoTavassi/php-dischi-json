@@ -31,18 +31,37 @@
     <main class="container">
       <h1 class="text-center my-4">Dischi JSON</h1>
       <ul class="row row-cols-3 justify-content-center g-3">
-        <li class="col" v-for="disco in dischi">
-          <div class="card p-3">
-            <img :src="disco.poster" alt="" srcset="" class="mb-2">
-            <h2>
-              {{disco.title}}
-            </h2>
-            <p>
-              {{disco.author}}
-            </p>
-            <p>
-              {{disco.year}}
-            </p>
+        <li class="col" v-for="disco, index in dischi">
+          <a @click="overlay = index; overlayOn = true;" href="#">
+            <div class="card p-3">
+              <img :src="disco.poster" alt="" srcset="" class="mb-2">
+              <h2>
+                {{disco.title}}
+              </h2>
+              <p>
+                {{disco.author}}
+              </p>
+              <p>
+                {{disco.year}}
+              </p>
+          </a>
+          <div v-if="overlayOn && overlay == index" class="overlay">
+            <div @click="overlayOn = false" class="card p-3">
+              <img :src="disco.poster" alt="" srcset="" class="mb-2">
+
+              <h2 class="my-2">
+                {{disco.title}}
+              </h2>
+              <p>
+                {{disco.author}}
+              </p>
+              <p>
+                {{disco.year}}
+              </p>
+              <p>
+                {{disco.genre}}
+              </p>
+            </div>
           </div>
         </li>
       </ul>

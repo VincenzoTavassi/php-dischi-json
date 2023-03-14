@@ -12,10 +12,40 @@ body {
   height: 100%;
 }
 
+a {
+  text-decoration: none;
+  color: inherit;
+  text-align: center;
+}
+
+a:hover {
+  color: inherit;
+}
+
 ul {
   list-style-type: none;
 }
 
 img {
   width: 100%;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(100, 100, 100, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  z-index: 1;
+}
+
+.overlay .card {
+  max-height: 800px;
+  overflow: auto;
+  width: 500px;
 }

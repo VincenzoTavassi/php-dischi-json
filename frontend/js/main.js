@@ -4,6 +4,8 @@ createApp({
   data() {
     return {
       dischi: [],
+      overlay: "",
+      overlayOn: false,
     };
   },
   methods: {
